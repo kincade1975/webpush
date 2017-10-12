@@ -41,7 +41,11 @@
       
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('./firebase-messaging-sw.js');
+          navigator.serviceWorker.register('./webpush/firebase-messaging-sw.js')
+          .then((registration) => {
+            console.log('Service worker registration: ' + registration);
+            messaging.useServiceworker(registration);
+          });
         });
       }
       
