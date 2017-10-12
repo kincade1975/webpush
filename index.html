@@ -1,8 +1,21 @@
 <html>
   <head>
-  
+    <link rel="manifest" href="/manifest.json">
   </head>
   <body>
-    <label>Hello</label>
+    <label>WebPush via Firebase</label>        
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBQRI-xeCKhokWdBmQf8dYo_BaD1M41Dk8",
+        authDomain: "webpush-182711.firebaseapp.com",
+        databaseURL: "https://webpush-182711.firebaseio.com",
+        projectId: "webpush-182711",
+        storageBucket: "webpush-182711.appspot.com",
+        messagingSenderId: "137634128121"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
