@@ -16,7 +16,7 @@
  const messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
 
-navigator.serviceworker.register('/webpush/firebase-messaging-sw.js')
+navigator.serviceworker.register('./webpush/firebase-messaging-sw.js')
 .then((registration) => {
   messaging.useServiceworker(registration);
 });
