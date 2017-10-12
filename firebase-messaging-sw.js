@@ -16,6 +16,11 @@
  const messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
 
+navigator.serviceworker.register('/webpush/firebase-messaging-sw.js')
+.then((registration) => {
+  messaging.useServiceworker(registration);
+});
+
 // If you would like to customize notifications that are received in the background (Web app is closed or not in browser focus) then you should implement this optional method.
 // [START background_handler]
 messaging.setBackgroundMessageHandler(function(payload) {
